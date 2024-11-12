@@ -1,0 +1,31 @@
+<!-- app.component.html -->
+<h1>Title - {{ title }}</h1>
+<h2>Users aged 20 and above:</h2>
+<ul>
+  <ng-container *ngFor="let user of users">
+    <li *ngIf="user.age >= 20">
+      {{ user.firstName }} {{ user.lastName }}, Age: {{ user.age }}
+    </li>
+  </ng-container>
+</ul>
+
+<app-user [parentUsers]="parentUsers"></app-user>
+
+<app-user (usersList)="handleUsers($event)"></app-user>
+
+<h1>Array from child component</h1>
+<ul>
+  <li *ngFor="let parent of receivedUsers">
+    <span><strong>id:</strong> {{ parent.id }} </span>
+    <br>
+    <span><strong>First Name:</strong> {{ parent.firstName }}</span>
+    <br>
+    <span><strong>Last Name:</strong> {{ parent.lastName }}</span>
+    <br>
+    <span><strong>dateOfBirth:</strong> {{ parent.dateOfBirth }}</span>
+    <br>
+    <span><strong>dateOfBirth:</strong> {{ parent.phoneNumber }}</span>
+    <br>
+    <span><strong>dateOfBirth:</strong> {{ parent.email }}</span>
+  </li>
+</ul>

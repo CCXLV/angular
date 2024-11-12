@@ -1,0 +1,18 @@
+<h1>Array from parrent component</h1>
+<ul>
+  <li *ngFor="let parent of parentUsers">
+    <span><strong>id:</strong> {{ parent.id }} </span>
+    <br>
+    <span><strong>First Name:</strong> {{ parent.firstName }}</span>
+    <br>
+    <span><strong>Last Name:</strong> {{ parent.lastName }}</span>
+    <br>
+    <span><strong>dateOfBirth:</strong> {{ parent.dateOfBirth }}</span>
+    <br>
+    <span><strong>dateOfBirth:</strong> {{ parent.phoneNumber }}</span>
+    <br>
+    <span><strong>dateOfBirth:</strong> {{ parent.email }}</span>
+  </li>
+</ul>
+
+<button (click)="emitUsers()">Send Users to Parent</button>
